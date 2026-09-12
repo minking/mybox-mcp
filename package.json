@@ -1,0 +1,36 @@
+{
+  "name": "mybox-mcp",
+  "version": "1.0.0",
+  "description": "Naver MYBOX OpenAPI Model Context Protocol (MCP) Server",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "mybox-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "naver",
+    "mybox",
+    "cloud"
+  ],
+  "author": "minking",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "axios": "^1.7.9",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "cheerio": "^1.2.0",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "dist"
+  ]
+}

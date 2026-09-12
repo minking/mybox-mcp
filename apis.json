@@ -1,0 +1,693 @@
+{
+  "dms_storage": {
+    "url": "https://developers.mybox.naver.com/docs/dms_storage",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_root": {
+    "url": "https://developers.mybox.naver.com/docs/dms_root",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_list": {
+    "url": "https://developers.mybox.naver.com/docs/dms_list",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_resourceId": {
+    "url": "https://developers.mybox.naver.com/docs/dms_resourceId",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "files_create_folder": {
+    "url": "https://developers.mybox.naver.com/docs/files_create_folder",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "folderName",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "생성할 폴더 이름"
+      },
+      {
+        "field": "parentId",
+        "type": "string",
+        "mandatory": "선택",
+        "description": "폴더가 생성될 위치의 상위 폴더 ID(생략 시, 루트에 생성)"
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "폴더 이름"
+      },
+      {
+        "field": "resourceId",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "폴더 ID"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "files_upload": {
+    "url": "https://developers.mybox.naver.com/docs/files_upload",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "fileName",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "업로드 할 파일 이름. 확장자를 유지하고 싶은 경우, 반드시 확장자까지 포함하여 입력하세요."
+      },
+      {
+        "field": "fileSize",
+        "type": "integer",
+        "mandatory": "필수",
+        "description": "업로드할 파일 크기(byte)로, 0 이상으로 입력하세요. 크기 미입력 시 오류가 발생될 수 있습니다. 최소 0"
+      },
+      {
+        "field": "isOverwrite",
+        "type": "boolean",
+        "mandatory": "선택",
+        "description": "동일 이름 존재 시 덮어쓰기 여부"
+      },
+      {
+        "field": "modifiedTime",
+        "type": "string",
+        "mandatory": "선택",
+        "description": "파일 수정일시로, 이어올리기 여부(resume)와 함께 입력하세요."
+      },
+      {
+        "field": "parentId",
+        "type": "string",
+        "mandatory": "선택",
+        "description": "파일을 업로드할 폴더 ID(생략 시, 루트에 업로드)"
+      },
+      {
+        "field": "resume",
+        "type": "boolean",
+        "mandatory": "선택",
+        "description": "이어올리기 여부. 업로드가 중단된 경우 중단 지점부터 다시 올리려면 true로 입력하고, modifiedTime과 함께 전송하세요."
+      },
+      {
+        "field": "offset",
+        "type": "integer",
+        "mandatory": "선택",
+        "description": "업로드가 중단된 경우, 이어올리기 시작점.(이어올리기가 아닌 경우, 0)"
+      },
+      {
+        "field": "uploadUrl",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "파일 업로드용 URL로, 48시간 동안 유효하고 업로드 후 재사용 불가합니다. multipart/form-data의 Filedata 항목으로 POST 하세요."
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "files_download": {
+    "url": "https://developers.mybox.naver.com/docs/files_download",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "files_copy": {
+    "url": "https://developers.mybox.naver.com/docs/files_copy",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "isOverwrite",
+        "type": "boolean",
+        "mandatory": "선택",
+        "description": "복사할 위치에 동일 이름 존재 시 덮어쓰기 여부 기본값 false"
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "mandatory": "선택",
+        "description": "파일/폴더 복사본 이름(생략 시, 원본 이름 사용). 확장자를 유지하고 싶은 경우, 반드시 확장자까지 포함하여 입력하세요."
+      },
+      {
+        "field": "parentId",
+        "type": "string",
+        "mandatory": "선택",
+        "description": "복사본을 저장할 폴더 ID(생략 시, 루트에 복사)"
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "파일/폴더 이름"
+      },
+      {
+        "field": "resourceId",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "파일/폴더 ID"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "files_delete": {
+    "url": "https://developers.mybox.naver.com/docs/files_delete",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "files_move": {
+    "url": "https://developers.mybox.naver.com/docs/files_move",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "isOverwrite",
+        "type": "boolean",
+        "mandatory": "선택",
+        "description": "이동할 위치에 동일 이름 존재 시 덮어쓰기 여부 기본값 false"
+      },
+      {
+        "field": "parentId",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "이동할 위치의 폴더 ID"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "files_rename": {
+    "url": "https://developers.mybox.naver.com/docs/files_rename",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "name",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "파일/폴더의 변경하고 싶은 이름. 확장자를 유지하고 싶은 경우, 반드시 확장자까지 포함하여 입력하세요."
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "mandatory": "필수",
+        "description": "파일/폴더 이름"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "dms_favorite": {
+    "url": "https://developers.mybox.naver.com/docs/dms_favorite",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_unfavorite": {
+    "url": "https://developers.mybox.naver.com/docs/dms_unfavorite",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "search_files_resources": {
+    "url": "https://developers.mybox.naver.com/docs/search_files_resources",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "search_folders_resources": {
+    "url": "https://developers.mybox.naver.com/docs/search_folders_resources",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_trash_list": {
+    "url": "https://developers.mybox.naver.com/docs/dms_trash_list",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "files_trash_restore": {
+    "url": "https://developers.mybox.naver.com/docs/files_trash_restore",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "isOverwrite",
+        "type": "boolean",
+        "mandatory": "선택",
+        "description": "복원 위치에 동일 이름 존재 시 덮어쓰기 여부 기본값 false"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  },
+  "files_trash_clean_resourceId": {
+    "url": "https://developers.mybox.naver.com/docs/files_trash_clean_resourceId",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "files_trash_clean": {
+    "url": "https://developers.mybox.naver.com/docs/files_trash_clean",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": []
+  },
+  "dms_trash_routine": {
+    "url": "https://developers.mybox.naver.com/docs/dms_trash_routine",
+    "method": "GET",
+    "endpoint": "",
+    "parameters": [
+      {
+        "field": "trashAutoDeleteDays",
+        "type": "integer",
+        "mandatory": "필수",
+        "description": "휴지통 자동 삭제 주기는 일 단위이므로, 0(off), 5, 15, 30, 50 중 하나로 입력하세요."
+      },
+      {
+        "field": "trashAutoDeleteDays",
+        "type": "integer",
+        "mandatory": "필수",
+        "description": "휴지통 자동 삭제 주기"
+      },
+      {
+        "field": "400",
+        "type": "PLAT-400",
+        "description": "BAD_REQUEST"
+      },
+      {
+        "field": "401",
+        "type": "PLAT-401",
+        "description": "UNAUTHORIZED"
+      },
+      {
+        "field": "403",
+        "type": "PLAT-403",
+        "description": "FORBIDDEN"
+      },
+      {
+        "field": "404",
+        "type": "PLAT-404",
+        "description": "NOT_FOUND"
+      },
+      {
+        "field": "409",
+        "type": "PLAT-409",
+        "description": "CONFLICT"
+      },
+      {
+        "field": "422",
+        "type": "PLAT-422",
+        "description": "UNPROCESSABLE_ENTITY"
+      },
+      {
+        "field": "423",
+        "type": "PLAT-423",
+        "description": "LOCKED"
+      },
+      {
+        "field": "429",
+        "type": "PLAT-429",
+        "description": "TOO_MANY_REQUESTS"
+      },
+      {
+        "field": "500",
+        "type": "PLAT-500",
+        "description": "INTERNAL_SERVER_ERROR"
+      },
+      {
+        "field": "502",
+        "type": "PLAT-502",
+        "description": "BAD_GATEWAY"
+      },
+      {
+        "field": "503",
+        "type": "PLAT-503",
+        "description": "SERVICE_UNAVAILABLE"
+      },
+      {
+        "field": "507",
+        "type": "PLAT-507",
+        "description": "INSUFFICIENT_STORAGE"
+      }
+    ]
+  }
+}
